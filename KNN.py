@@ -39,10 +39,10 @@ class KNN:
 
     def __minkowski(self, X_test: pd.core.frame.DataFrame) -> dict:
         distances_list: list = list()
-        y: list = X_test[1].copy().to_list()
+        y: list = X_test[1][1:].copy().to_list()
 
         for row in self.__X.iterrows():
-            x: list = row[1].copy().to_list()
+            x: list = row[1][1:].copy().to_list()
             summation: list = list()
             for i in zip(x, y):
                 tmp: int = abs(i[0] - i[1])
