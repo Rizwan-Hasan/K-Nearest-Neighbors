@@ -1,4 +1,4 @@
-'''
+"""
 MIT License
 
 Copyright (c) 2021 Rizwan Hasan
@@ -20,11 +20,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-'''
+"""
 
 import collections
 import numpy as np
 import pandas as pd
+
 
 class KNN:
     def __init__(self, n_neighbors: int, minkowski_p: int = 2) -> None:
@@ -64,7 +65,7 @@ class KNN:
 
     def predict(self, X: pd.core.frame.DataFrame):
         predictions_list: list = []
-        
+
         for row in X.iterrows():
             distances: dict = self.__minkowski(X_test=row)
             sorted_distances: tuple = tuple(
@@ -77,5 +78,6 @@ class KNN:
 
         return np.array(predictions_list)
 
+
 if __name__ == "__main__":
-    main()
+    print("Hello World")
